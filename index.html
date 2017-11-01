@@ -15,9 +15,13 @@
     <div >
         <canvas id="id-canvas" width="300" height="500" class="canvasCla"></canvas>
         <hr>
+        <div><ul>
+            <li>wasd控制上下左右</li>
+            <li>b控制debug模式</li>
+        </ul></div>
         <input type="range" id="id-range-input">
         <hr>
-        <div>
+        <div >
             <div class="control_label">
                 <input type="range" min="1" max="10" value="" class="controlData" data-value="Const.speed.player">
                 玩家速度: <span ></span>
@@ -43,6 +47,7 @@
                 敌机3速度: <span ></span>
             </div>
         </div>
+
     </div>
 
     <!-- 控制游戏参数Const的脚本 -->
@@ -60,44 +65,38 @@
 
         bindVar(".controlData", "input", function(e) {
             var el = e.target
-            var elData = e.dataset.value   //input的data-value上的值
+            var elData = el.dataset.value   //input的data-value上的值
             var elValue = el.value
             eval(elData + "=" + elValue)
 
             var elSpan = el.closest(".control_label").querySelector("span")
             elSpan.innerText = elValue
         })
-
-
-
-
-        // var ranges = document.querySelectorAll(".controlData")
-        // ranges.forEach(function(element) {
-        //     element.addEventListener("input", function(e) {
-        //         console.log(e)
-        //         var value = e.target.value
-        //         Const.speed.player = value
-        //         console.log(Const.speed)
-        //     })
-        // })
     </script>
+
+    <!-- 数据 -->
     <script src="js/data/level.js"></script>
-        <script src="js/data/const.js"></script>
+    <script src="js/data/const.js"></script>
+
+    <!-- 元素 -->
     <script src="js/element/autoElement.js"></script>
-    <script src="js/element/paddle.js"></script>
-    <script src="js/element/bullet.js"></script>
-        <script src="js/element/player.js"></script>
+        <script src="js/element/bullet.js"></script>
     <script src="js/element/clouds.js"></script>
     <script src="js/element/enemy.js"></script>
+    <script src="js/element/player.js"></script>
+
     <script src="js/information.js"></script>
-    
-    <script src="js/element/block.js"></script>
+
+    <!-- 画布和通用函数 -->
     <script src="js/guagame.js"></script>
     <script src="js/utils.js"></script>
-    <script src="js/element/ball.js"></script>
+    
+    <!-- 场景 -->
     <script src="js/sence/sence_title.js"></script>
     <script src="js/sence/sence.js"></script>
     <script src="js/sence/sence_end.js"></script>
+
+    <!-- 入口函数 -->
     <script src="js/main.js"></script>
 <script>
     /*通用的知识点
@@ -209,7 +208,6 @@
         })
 
         document.querySelector("#id-range-input").addEventListener("input", function(event) {
-            log(event);
             Const.fps = String(event.target.value + 1);
         })
 

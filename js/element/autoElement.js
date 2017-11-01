@@ -2,7 +2,7 @@
 * @Author: lifei
 * @Date:   2017-10-17 16:49:27
 * @Last Modified by:   lifei
-* @Last Modified time: 2017-10-20 17:13:18
+* @Last Modified time: 2017-10-27 17:23:33
 */
 
 'use strict';
@@ -22,11 +22,19 @@ class autoElement {
         this.height = image.height
         this.speed = Const.speed[this.name]
         this.image = image
+        this.life = Const.life[this.name]
+        this.survival = true
     }
     move() {
         this.y += this.speed
         if (this.y > Const.height) {
             this.y = -300
+        }
+    }
+    kill() {
+        this.life--
+        if (this.life <= 0) {
+            this.survival = false
         }
     }
 }

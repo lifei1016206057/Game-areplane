@@ -2,7 +2,7 @@
 * @Author: lifei
 * @Date:   2017-10-17 15:46:56
 * @Last Modified by:   lifei
-* @Last Modified time: 2017-10-20 17:08:50
+* @Last Modified time: 2017-10-30 14:57:09
 */
 
 'use strict';
@@ -24,6 +24,10 @@ class Enemy extends autoElement{
             this.y = -800
             this.x = randomNumber(0, Const.width - this.width)
         }
+    }
+    update() {
+        super.update()
+        
     }
 }
 

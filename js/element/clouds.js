@@ -2,7 +2,7 @@
 * @Author: lifei
 * @Date:   2017-10-13 14:24:37
 * @Last Modified by:   lifei
-* @Last Modified time: 2017-10-17 17:24:12
+* @Last Modified time: 2017-10-30 14:42:12
 */
 
 'use strict';
@@ -23,15 +23,17 @@ class Clouds extends autoElement{
     }
 }
 
-var Backdrop = function() {
-    var image = imageFormPath("img/background.png");
-    var o = {
-        x: 0,
-        y: 0,
-        width: Const.width,
-        height: Const.height,
-        image: image,
+class Backdrop extends autoElement {
+    constructor() {
+        super("background")
+        this.setup()
     }
-    return o;
+    setup() {
+        super.setup()
+        this.x = 0
+        this.y = 0
+        this.width = Const.width
+        this.height = Const.height
+    }
 }
 

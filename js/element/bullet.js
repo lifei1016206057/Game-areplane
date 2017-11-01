@@ -2,7 +2,7 @@
 * @Author: lifei
 * @Date:   2017-10-18 16:04:22
 * @Last Modified by:   lifei
-* @Last Modified time: 2017-10-20 17:15:34
+* @Last Modified time: 2017-10-27 17:22:47
 */
 
 'use strict';
@@ -17,6 +17,7 @@ class Bullet extends autoElement {
 		super.setup()
 	}
 	move() {
-		this.y += Const.speed.bullet
+		this.y += this.speed
 	}
+	
 }

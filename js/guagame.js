@@ -53,10 +53,22 @@ class GuaGame {
         this.elements.forEach((v, i) => {
             this.drawImage(v)
         })
+        
+    }
+    removeElement(element) {
+        var i = this.elements.indexOf(element)
+        this.elements.splice(i, 1)
     }
     updateAll() {
-       this.elements.forEach((v, i) => {
-            v.update && v.update()
+        log(this.elements)
+        this.elements.forEach((v, i) => {
+            if (!v.survival) {
+                this.elements.splice(i, 1)
+            }
+            if(Const.debug) {
+                v.update && v.update()
+            }
+            v.move && v.move()
         }) 
     }
     //跳到新的关卡

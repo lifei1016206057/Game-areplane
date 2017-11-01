@@ -3,7 +3,7 @@
  */
 var __main = function() {
 
-    enabledebug(true);
+    enabledebug(Const.debug);
 
     Const.senceTitle = Const.senceTitle || new Sence_title();
 

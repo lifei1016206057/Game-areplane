@@ -32,10 +32,6 @@ class Sence_title extends Sence_base {
 
         var self = this;
         this.game.registryAction("k", () => {
-            log("开始")
-            // Const.sence = new Sence(this.game, Const.sence_num);
-            // this.game.replaceSence(Const.sence)
-            // Const.senceTitle = null;
             this.game.newSence();
         })
        
@@ -47,36 +43,3 @@ class Sence_title extends Sence_base {
     }
 
 }
-
-
-//var Sence_title = function(game) {
-//    log("aadf")
-//
-//    var game =game || GuaGame("#id-canvas")
-//
-//    var s = {
-//
-//    }
-//
-//    var gamestart = Information("按 k 开始游戏", 200, 200)
-//    s.clear = function() {
-//        game.context.clearRect(0, 0, game.canvas.width, game.canvas.height);
-//    }
-//
-//    s.draw = function() {
-//        game.drawText(gamestart);
-//    }
-//
-//    s.update = function() {
-//
-//    }
-//
-//    game.registryAction("k", function() {
-//        Const.sence = Sence(game);
-//        log(game)
-//        game.replaceSence(Const.sence)
-//        Const.senceTitle = null;
-//    })
-//    game.replaceSence(s);
-//    return s;
-//}
