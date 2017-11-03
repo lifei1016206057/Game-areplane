@@ -14,13 +14,21 @@ const imageFormPath = function(path) {
 
 //碰撞函数
 const rectIntersects = function(a, b) {
-    if (a.x > b.x && a.x < b.x + b.width) {
-        if (a.y > b.y && a.y < b.y + b.height) {
-            log("相撞")
-            return true;
-        }
+   
+    a.top = a.y
+    a.left = a.x 
+    a.right = a.x + a.width
+    a.bottom = a.y + a.height
+
+    b.top = b.y
+    b.left = b.x 
+    b.right = b.x + b.width
+    b.bottom = b.y + b.height
+        if (a.bottom < b.top || a.left > b.right || a.top > b.bottom || a.right < b.left) {
+        return false
+    } else {
+        return true
     }
-    return false;
 }
 
 //随机数

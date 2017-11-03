@@ -60,7 +60,6 @@ class GuaGame {
         this.elements.splice(i, 1)
     }
     updateAll() {
-        log(this.elements)
         this.elements.forEach((v, i) => {
             if (!v.survival) {
                 this.elements.splice(i, 1)

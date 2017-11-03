@@ -44,7 +44,7 @@ class Sence extends Sence_base {
    
     update() {
         this.game.updateAll()
-        // this.areploneUpdate()
+        this.areploneUpdate()
     }
     draw() {
         this.game.drawAll()
@@ -91,12 +91,19 @@ class Sence extends Sence_base {
         })
     }
     areploneUpdate() {
-        this.enemies.element.forEach( (v, i) => {
-            if (this.enemies.length <= 6) {
-                this.enemies = new Enemies()
-                 this.game.addElements(this.enemies.element)    
+
+        this.game.elements.forEach((v, i) => {
+            if (!v.survival) {
+                this.game.elements.splice(i, 1)
             }
-            this.player.bullets.forEach(function(b, j) {
+        })
+
+        this.enemies.element.forEach( (v, i) => {
+            // if (this.enemies.length <= 6) {
+            //     var a = new Enemies()
+            //      this.game.addElements(a)    
+            // }
+            this.player.bullets.forEach( (b, j) => {
                 if (rectIntersects(v, b)) {
                         v.kill()
                         b.kill()
